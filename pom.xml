@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com</groupId>
+	<artifactId>zsx</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>ssm maven web</name>
+	<description>null</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>
+		<!-- spring版本号 -->
+		<spring.version>4.3.2.RELEASE</spring.version>
+		<!-- mybatis版本号 -->
+		<mybatis.version>3.4.1</mybatis.version>
+		<!-- log4j日志文件管理包版本 -->
+		<slf4j.version>1.7.21</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<!-- hibernate版本号 -->
+		<hibernate.version>5.1.0.Final</hibernate.version>
+	</properties>
+
+	
+	<dependencies>
+
+		<!-- spring mvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+	</dependencies>
+
+
+	<build>
+		<finalName>zsx</finalName>
+		
+		<!--  -->
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+
+		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+		<testOutputDirectory>src/main/webapp/WEB-INF/classes</testOutputDirectory>
+	
+	
+	
+	</build>
+	
+</project>
