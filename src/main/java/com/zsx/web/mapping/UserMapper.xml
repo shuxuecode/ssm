@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.zsx.web.dao.UserMapper" >
+
+  <select id="selectByPrimaryKey" resultType="com.zsx.web.entity.User" >
+    select `id` ,`name` ,`pwd` from user where  `id` = #{id}
+  </select>
+  
+  <!-- <select id="search" resultType="User">
+    select `id` ,`name` ,`pwd` ,`id` ,`name` ,`pwd`  from user
+  </select> -->
+  
+  <insert id="insert" parameterType="com.zsx.web.entity.User" useGeneratedKeys="true" >
+    insert into user (`id` ,`name` ,`pwd` ) values (#{id},#{name},#{pwd})
+  </insert>
+  
+  <delete id="deleteByPrimaryKey">
+    delete from user where  `id` = #{id}
+  </delete>
+  
+  <!-- <update id="updateByPrimaryKey" parameterType="com.zsx.web.domain.User" >
+    update user set `name` = #{name},`pwd` = #{pwd},`id` = #{id},`name` = #{name},`pwd` = #{pwd} where  `id` = #{id}
+  </update> -->
+  
+</mapper>

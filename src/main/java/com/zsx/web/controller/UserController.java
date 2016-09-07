@@ -11,6 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.alibaba.fastjson.JSON;
+import com.zsx.web.entity.User;
+import com.zsx.web.service.UserService;
+
 /**
  * 用户
  * @author zsx
@@ -20,8 +24,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("user")
 public class UserController {
 
-//	@Autowired
-//	private UserService userService;
+	@Autowired
+	private UserService userService;
 	/**
 	 * 跳转到用户管理模块
 	 */
@@ -33,15 +37,18 @@ public class UserController {
 	/**
 	 * 获取用户列表
 	 */
-//	@RequestMapping("/getUserList")
-//	public void getJson(HttpServletRequest request, HttpServletResponse response)
-//			throws IOException {
+	@RequestMapping("/getUserList")
+	public void getJson(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
 //		List<Tuser> list = userService.getAllUser();
-//		response.setContentType("application/json;charset=utf-8");
-//		PrintWriter out = response.getWriter();
-//		out.println(JSON.toJSONString(list));
-//		out.flush();
-//		out.close();
-//	}
+		
+		User user = userService.searchById("1");
+		
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.println(JSON.toJSONString(user));
+		out.flush();
+		out.close();
+	}
 
 }
