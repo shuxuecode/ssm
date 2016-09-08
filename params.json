@@ -1,0 +1,6 @@
+{
+  "name": "Ssm",
+  "tagline": "spring+springMVC+Mybatis",
+  "body": "# 搭建ssm框架\r\n\r\n> 记录一步步的过程\r\n\r\n## 一、编写pom.xml文件\r\n\r\n声明\r\n\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<groupId>com</groupId>\r\n\t<artifactId>zsx</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<packaging>war</packaging>\r\n\t<name>ssm maven web</name>\r\n\t<description>null</description>\r\n\r\n## 二、添加web.xml\r\n\r\n\r\n## 三、创建maven文件结构tree目录\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
