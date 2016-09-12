@@ -67,7 +67,8 @@ public class UtilTest {
 	@Test
 	public void add(){
 		User user = new User();
-		user.setId("9");
+		user.setId(""
+				+ "7");
 		user.setName("Zsx");
 		user.setPwd("pwd");
 		userService.insert(user);

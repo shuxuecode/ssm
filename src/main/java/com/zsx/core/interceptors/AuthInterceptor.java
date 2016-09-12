@@ -6,11 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.alibaba.fastjson.JSON;
 
 public class AuthInterceptor implements HandlerInterceptor {
 
@@ -61,14 +58,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 			return true;
 		}
 		
-		System.out.println(JSON.toJSONString(excludeUrls));
-		
 		// 如果要访问的资源是不需要验证的
 		if (url.indexOf("wechatController") > -1 || excludeUrls.contains(url)) {
 			return true;
 		}
 		
-		// 获取用户 信息 验证 然后判断
+		// 获取用户 信息 验证 然后判断  TODO
 		
 		
 		

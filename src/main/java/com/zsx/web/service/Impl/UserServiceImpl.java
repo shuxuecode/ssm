@@ -1,11 +1,12 @@
 package com.zsx.web.service.Impl;
 
-import java.util.List;
 import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.zsx.web.entity.User;
+
 import com.zsx.web.dao.UserMapper;
+import com.zsx.web.entity.User;
 import com.zsx.web.service.UserService;
 
 @Service("userService")
