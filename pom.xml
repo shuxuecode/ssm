@@ -20,15 +20,8 @@
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
-	
-	<dependencies>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
+	<dependencies>
 
 		<!-- spring mvc -->
 		<dependency>
@@ -36,7 +29,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- spring核心包 -->
 		<!-- springframe start -->
 		<dependency>
@@ -94,28 +87,28 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.9</version>
 		</dependency>
-		
+
 		<!-- mybatis核心包 -->
-		<dependency> 
-			<groupId>org.mybatis</groupId> 
-			<artifactId>mybatis</artifactId> 
-			<version>${mybatis.version}</version> 
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
 		</dependency>
 
 		<!-- mybatis/spring包 -->
-		<dependency> 
-			<groupId>org.mybatis</groupId> 
-			<artifactId>mybatis-spring</artifactId> 
-			<version>1.3.0</version> 
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.0</version>
 		</dependency>
-		
-		
+
 		<!-- mysql驱动包 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.38</version>
 		</dependency>
+
 
 		<!-- junit测试包 -->
 		<dependency>
@@ -171,15 +164,15 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 		<!-- log end -->
-		
-		
+
+
 	</dependencies>
 
 
 	<build>
 		<finalName>ssm</finalName>
-		
-		<!--  -->
+
+		<!-- -->
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
 
@@ -196,8 +189,8 @@
 
 		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
 		<testOutputDirectory>src/main/webapp/WEB-INF/classes</testOutputDirectory>
-	
-		
+
+
 		<!-- Maven插件 -->
 		<plugins>
 			<!-- 编译插件 -->
@@ -217,26 +210,27 @@
 					<maxmem>2048m</maxmem>
 				</configuration>
 			</plugin>
-			
-			<!-- 设置资源文件的编码方式  -->
+
+			<!-- 设置资源文件的编码方式 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.4.3</version>
-				<executions>  
-				    <execution>  
-				        <phase>compile</phase>  
-				    </execution>  
-				</executions>  
-				<configuration>  
-				    <encoding>UTF-8</encoding>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			
-			
+
+
+
 		</plugins>
-		
-	
+
+
 	</build>
-	
+
 </project>

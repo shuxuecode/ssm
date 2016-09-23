@@ -65,20 +65,30 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<!-- openSessionInView配置 -->
-	<!-- <filter>
-		<filter-name>openSessionInViewFilter</filter-name>
-		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+	<!-- 配置 Druid 监控信息显示页面 -->
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
 		<init-param>
-			<param-name>singleSession</param-name>
+			<description>允许清空统计数据</description>
+			<param-name>resetEnable</param-name>
 			<param-value>true</param-value>
 		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>openSessionInViewFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
-
+		<init-param>
+			<description>用户名</description>
+			<param-name>loginUsername</param-name>
+			<param-value>druid</param-value>
+		</init-param>
+		<init-param>
+			<description>密码</description>
+			<param-name>loginPassword</param-name>
+			<param-value>druid</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
 
 
 
