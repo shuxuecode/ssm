@@ -36,12 +36,14 @@
 		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
 		<property name="minEvictableIdleTimeMillis" value="25200000" />
 
-		<!-- 打开removeAbandoned功能 -->
+		<!-- 打开removeAbandoned功能:自动清除无用连接 -->
 		<property name="removeAbandoned" value="true" />
-		<!-- 1800秒，也就是30分钟 -->
+		<!-- 清除无用连接的等待时间:1800秒，也就是30分钟 -->
 		<property name="removeAbandonedTimeout" value="1800" />
 		<!-- 关闭abanded连接时输出错误日志 -->
 		<property name="logAbandoned" value="true" />
+		<!-- 连接属性 -->
+		<property name="connectionProperties" value="clientEncoding=UTF-8"></property>
 
 		<!-- 监控数据库 -->
 		<property name="filters" value="mergeStat" />
@@ -66,12 +68,6 @@
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
         <property name="dataSource" ref="dataSource" />  
     </bean>
-
-	<!-- 配置事务管理器 在*ServiceImpl里写@Transactional就可以启用事务管理 -->
-	<!-- <bean id="transactionManager"
-		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean> -->
 
 	<!-- 第一种方式: 注解方式配置事物 -->
 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->

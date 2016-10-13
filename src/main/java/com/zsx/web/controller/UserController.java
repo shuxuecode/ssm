@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.zsx.web.entity.User;
@@ -34,6 +35,30 @@ public class UserController {
 		return "jsp/user/userManager";
 	}
 
+	@RequestMapping("login")
+	@ResponseBody
+	public String login(HttpServletRequest request, HttpServletResponse response){
+		String name = request.getParameter("username");
+		String pwd = request.getParameter("password");
+		if ("zhao".equals(name) && "shuxue".equals(pwd)) {
+			request.getSession().setAttribute("userName", name);
+			return "ok";
+		}else{
+			return "";
+		}
+		
+	}
+	
+	@RequestMapping("logout")
+	public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		request.getSession().setAttribute("userName", null);
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.println(JSON.toJSONString("{msg:true}"));
+		out.flush();
+		out.close();
+	}
+	
 	/**
 	 * 获取用户列表
 	 */
