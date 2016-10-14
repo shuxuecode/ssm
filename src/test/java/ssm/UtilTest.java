@@ -1,5 +1,7 @@
 package ssm;
 
+import javax.jws.soap.SOAPBinding.Use;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.fastjson.JSON;
+import com.weshop.dao.UserDao;
 import com.zsx.web.dao.UserMapper;
 import com.zsx.web.entity.User;
 import com.zsx.web.service.UserService;
@@ -36,6 +39,9 @@ public class UtilTest {
 	private UserMapper userMapper;
 	
 	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
 	private UserService userService;
 	
 	@Before
@@ -55,13 +61,11 @@ public class UtilTest {
 		System.out.println(JSON.toJSONString(user));
 	}
 	
-//	@Test
-//	public void getAll(){
-//		List<Tuser> list = userDao.find("from Tuser");
-//		for (Tuser tuser : list) {
-//			System.out.println(JSON.toJSONString(tuser));
-//		}
-//	}
+	@Test
+	public void getAll(){
+		User selectByPrimaryKey = userDao.selectByPrimaryKey("99");
+		System.out.println(JSON.toJSONString(selectByPrimaryKey));
+	}
 	
 	
 	
