@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zsx:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>zsx</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ssm.war">
+      <element id="artifact" artifact-name="zsx:war exploded" />
+    </root>
+  </artifact>
+</component>
